@@ -1,0 +1,54 @@
+=head1 ExtraDashboards
+
+A modification of the OTRS dashboard to add additional dashboards.
+
+=head2 Description
+
+If you have stats enabled for the dashboard and maybe additional dashboard widgets that come
+with addons like L<TicketChecklist|https://feature-addons.de/otrs/Ticket/TicketChecklist> or
+L<GenericDashboardStats|https://opar.perl-services.de/dist/GenericDashboardStats>, you might
+want to group the widgets on different dashboards. That is what this addon is for.
+
+=head2 Configure new dashboards
+
+After you've installed this addon, adding new dashboards is quite easy: Go the the
+system configuration and search for I<Frontend::Navigation###AgentDashboard###003-ExtraDashboards>.
+Edit that config setting and add a new entry. To add the entry, you have to click the "+"-Button
+in the setting. That should add new fields for "Block", "Description", "Link", "Name", "NavBar"
+and "Prio". These are the fields, you should fill.
+
+=over 4
+
+=item * Block
+
+Block is I<ItemArea>
+
+=item * Description
+
+The description is shown when you hover over the navigation item. This should something that
+describes the purpose of the dashboard in one short sentence
+
+=item * Link
+
+This is the most important part of the settings for the new dashboard. It has to start with
+I<Action=AgentDashboard;Dashboard=>. Then give the dashboard a unique key like "Monitoring".
+Then the link should be I<Action=AgentDashboard;Dashboard=Monitoring>.
+
+The key has to be unique, so OTRS can know which widgets should be shown on which dashboard.
+
+=item * Name
+
+This text is shown in the navigation bar.
+
+=item * NavBar
+
+This defines where the navigation item is shown. If you want it to be in the submenu of
+"Dashboard", then use "Dashboard". If you want to show the item in the first level of the
+navigation bar, you have to use an unused key. But then you have to use I<Menu> in the 
+Type field.
+
+=item * Prio
+
+The priority defines the order of navigation items.
+
+=back

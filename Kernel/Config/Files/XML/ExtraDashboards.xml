@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<otrs_config version="2.0" init="Framework">
+    <Setting Name="Frontend::Navigation###AgentDashboard###003-ExtraDashboards" Required="0" Valid="1">
+        <Description Translatable="1">Main menu item registration.</Description>
+        <Navigation>Frontend::Agent::ModuleRegistration::MainMenu</Navigation>
+        <Value>
+            <Array>
+                <DefaultItem ValueType="FrontendNavigation">
+                    <Hash>
+                    </Hash>
+                </DefaultItem>
+                <Item>
+                    <Hash>
+                        <Item Key="Group">
+                            <Array>
+                            </Array>
+                        </Item>
+                        <Item Key="GroupRo">
+                            <Array>
+                            </Array>
+                        </Item>
+                        <Item Key="Description" Translatable="1">Dashboard.</Item>
+                        <Item Key="Name" Translatable="1">Dashboard</Item>
+                        <Item Key="Link">Action=AgentDashboard</Item>
+                        <Item Key="LinkOption"></Item>
+                        <Item Key="NavBar">Dashboard</Item>
+                        <Item Key="Block">ItemArea</Item>
+                        <Item Key="AccessKey">d</Item>
+                        <Item Key="Prio">55</Item>
+                    </Hash>
+                </Item>
+                <Item>
+                    <Hash>
+                        <Item Key="Group">
+                            <Array>
+                            </Array>
+                        </Item>
+                        <Item Key="GroupRo">
+                            <Array>
+                            </Array>
+                        </Item>
+                        <Item Key="Description" Translatable="1">Second Dashboard.</Item>
+                        <Item Key="Name" Translatable="1">Dashboard 2</Item>
+                        <Item Key="Link">Action=AgentDashboard;Dashboard=Dashboard2</Item>
+                        <Item Key="LinkOption"></Item>
+                        <Item Key="NavBar">Dashboard</Item>
+                        <Item Key="Block">ItemArea</Item>
+                        <Item Key="AccessKey">d</Item>
+                        <Item Key="Prio">60</Item>
+                    </Hash>
+                </Item>
+            </Array>
+        </Value>
+    </Setting>
+    <Setting Name="Loader::Module::AgentDashboard###003-ExtraDashboards" Required="0" Valid="1">
+        <Description Translatable="1">Loader module registration for the agent interface.</Description>
+        <Navigation>Frontend::Agent::ModuleRegistration::Loader</Navigation>
+        <Value>
+            <Hash>
+                <Item Key="JavaScript">
+                    <Array>
+                        <Item>PS.ExtraDashboards.js</Item>
+                    </Array>
+                </Item>
+            </Hash>
+        </Value>
+    </Setting>
+</otrs_config>
