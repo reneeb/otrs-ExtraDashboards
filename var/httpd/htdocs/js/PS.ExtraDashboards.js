@@ -10,8 +10,14 @@
 
 
 Core.App.Ready( function() {
+    var Parameters = document.location.search.substr(1);
+
+    if ( Parameters.length == 0 ) {
+        return;
+    }
+
     var Queries = {};
-    $.each(document.location.search.substr(1).split(/&|;/),function(c,q){
+    $.each(Parameters.split(/&|;/),function(c,q){
       var i = q.split('=');
       Queries[i[0].toString()] = i[1].toString();
     });
