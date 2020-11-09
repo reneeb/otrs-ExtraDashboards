@@ -27,6 +27,7 @@
                         <Item Key="Block">ItemArea</Item>
                         <Item Key="AccessKey">d</Item>
                         <Item Key="Prio">55</Item>
+                        <Item Key="Type">Item</Item>
                     </Hash>
                 </Item>
                 <Item>
@@ -47,6 +48,7 @@
                         <Item Key="Block">ItemArea</Item>
                         <Item Key="AccessKey">d</Item>
                         <Item Key="Prio">60</Item>
+                        <Item Key="Type">Item</Item>
                     </Hash>
                 </Item>
             </Array>
